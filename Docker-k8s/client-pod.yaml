@@ -1,0 +1,17 @@
+#client-pod.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: client-pod
+  labels:
+    app: client
+spec:
+  containers:
+  - name: client
+    image: 2021105595-client:latest
+    env:
+    - name: SERVER_HOST
+      value: "server-service"
+    - name: SERVER_PORT
+      value: "8000"
